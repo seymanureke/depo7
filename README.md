@@ -1,11 +1,15 @@
 Linux Syslog Yönetim Sistemi (Bağlı Liste Uygulaması)
+
 Proje Hakkında
+
 Bu çalışma, Linux işletim sistemindeki sistem günlüklerinin (syslog) çalışma mantığını anlamak ve bu verileri veri yapıları dersinin temel konularından biri olan Bağlı Liste (Linked List) yapısı ile simüle etmek amacıyla geliştirilmiştir.
 
 Proje, sistemde oluşan olayları kronolojik bir sırada tutar, dinamik bellek yönetimi kullanarak verimli bir depolama sağlar ve C dilinde modüler bir yapıda tasarlanmıştır.
 
 Teknik Detaylar
+
 1. Syslog Mekanizması
+   
 Syslog, sistemde meydana gelen kernel hataları, kullanıcı girişleri ve servis uyarıları gibi olayların kaydedildiği standart bir protokoldür. Bu projede kullanılan temel birimler:
 
 KERNEL: Donanım ve çekirdek seviyesindeki olaylar.
@@ -17,6 +21,7 @@ NETWORK: Ağ bağlantısı ve yapılandırma olayları.
 CRON: Zamanlanmış görevlerin takibi.
 
 2. Veri Yapısı Seçimi: Neden Bağlı Liste?
+   
 Bu projede Tek Yönlü Bağlı Liste (Singly Linked List) tercih edilmiştir. Tercih nedenleri şunlardır:
 
 Dinamik Bellek Yönetimi: Log dosyalarının boyutu önceden kestirilemez. Bağlı liste sayesinde dizi boyutunu önceden belirlemek zorunda kalmadan, her yeni log için malloc ile çalışma zamanında yer ayrılır.
@@ -39,6 +44,7 @@ gunlukleri_listele(): Listedeki tüm verileri formatlı bir tablo şeklinde kull
 bellegi_bosalt(): Program sonlanırken kullanılan tüm RAM alanını sisteme geri iade ederek "Memory Leak" (bellek sızıntısı) oluşmasını engeller.
 
 Nasıl Çalıştırılır?
+
 Proje herhangi bir standart C derleyicisi (GCC, Clang vb.) veya CLion IDE'si ile çalıştırılabilir.
 
 Terminali açın.
